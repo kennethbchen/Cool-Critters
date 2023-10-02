@@ -1,3 +1,35 @@
-[gd_scene format=3 uid="uid://dh5vrcjnh4vk3"]
+[gd_scene load_steps=2 format=3 uid="uid://dh5vrcjnh4vk3"]
+
+[ext_resource type="Texture2D" uid="uid://ct74ppg5jli38" path="res://sprites/cool critters_Slices/TitleLogo.png" id="1_240qt"]
 
 [node name="Title" type="Node2D"]
+
+[node name="TitleLogo" type="Sprite2D" parent="."]
+position = Vector2(152, 67)
+scale = Vector2(0.494652, 0.494652)
+texture = ExtResource("1_240qt")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -74.0
+offset_top = -31.0
+offset_right = 74.0
+offset_bottom = 79.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayButton" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 2
+offset_top = 65.0
+offset_right = 148.0
+offset_bottom = 96.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "Observe Critters"
