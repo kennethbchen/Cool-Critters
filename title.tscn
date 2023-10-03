@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dh5vrcjnh4vk3"]
+[gd_scene load_steps=3 format=3 uid="uid://dh5vrcjnh4vk3"]
 
 [ext_resource type="Texture2D" uid="uid://ct74ppg5jli38" path="res://sprites/cool critters_Slices/TitleLogo.png" id="1_240qt"]
+[ext_resource type="Script" path="res://scripts/TitleLogo.gd" id="2_lfkql"]
 
 [node name="Title" type="Node2D"]
 
@@ -8,6 +9,7 @@
 position = Vector2(152, 67)
 scale = Vector2(0.494652, 0.494652)
 texture = ExtResource("1_240qt")
+script = ExtResource("2_lfkql")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
