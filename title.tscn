@@ -1,10 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://dh5vrcjnh4vk3"]
+[gd_scene load_steps=7 format=3 uid="uid://dh5vrcjnh4vk3"]
 
+[ext_resource type="Script" path="res://addons/simplemenu/simple_menu/simple_menu.gd" id="1_1qc5c"]
 [ext_resource type="Texture2D" uid="uid://ct74ppg5jli38" path="res://sprites/cool critters_Slices/TitleLogo.png" id="1_240qt"]
+[ext_resource type="Script" path="res://addons/simplemenu/simple_menu_button_binding.gd" id="2_fic66"]
 [ext_resource type="Script" path="res://scripts/TitleLogo.gd" id="2_lfkql"]
 [ext_resource type="Texture2D" uid="uid://b2l53w5ojkmql" path="res://sprites/cool critters_Slices/Grass.png" id="3_24mm2"]
 
+[sub_resource type="Resource" id="Resource_la555"]
+script = ExtResource("2_fic66")
+button_path = NodePath("../CanvasLayer/Control/PlayButton")
+action_type = 3
+scene_to_load = "res://game.tscn"
+
 [node name="Title" type="Node2D"]
+
+[node name="SimpleMenu" type="Node" parent="."]
+script = ExtResource("1_1qc5c")
+actions = Array[ExtResource("2_fic66")]([SubResource("Resource_la555")])
 
 [node name="Grass" type="Sprite2D" parent="."]
 texture_repeat = 2
