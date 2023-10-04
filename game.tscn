@@ -1,17 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://b55kcv7uhnbqh"]
+[gd_scene load_steps=7 format=3 uid="uid://b55kcv7uhnbqh"]
 
 [ext_resource type="Script" path="res://scripts/Rock.gd" id="1_74gl1"]
+[ext_resource type="Script" path="res://Game.gd" id="1_e1h1s"]
 [ext_resource type="Texture2D" uid="uid://do110c20y1d8e" path="res://sprites/cool critters_Slices/Rock5.png" id="1_klhtb"]
 [ext_resource type="Texture2D" uid="uid://b2l53w5ojkmql" path="res://sprites/cool critters_Slices/Grass.png" id="1_lki38"]
+[ext_resource type="PackedScene" uid="uid://jervbtlwclkc" path="res://scenes/critter.tscn" id="2_rwof5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3yklb"]
 radius = 44.7214
 
 [node name="game" type="Node2D"]
+script = ExtResource("1_e1h1s")
 
 [node name="Grass" type="Sprite2D" parent="."]
+z_index = -5
 position = Vector2(150, 150)
 texture = ExtResource("1_lki38")
+
+[node name="Critters" type="Node" parent="."]
+
+[node name="Critter" parent="Critters" instance=ExtResource("2_rwof5")]
 
 [node name="Rock" type="Area2D" parent="."]
 position = Vector2(157, 148)

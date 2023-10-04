@@ -1,0 +1,42 @@
+[gd_scene load_steps=31 format=3 uid="uid://jervbtlwclkc"]
+
+[ext_resource type="Script" path="res://scripts/Critter.gd" id="1_cctx2"]
+[ext_resource type="Texture2D" uid="uid://cmkej8usyfvy2" path="res://sprites/cool critters_Slices/Ant1.png" id="2_ond1y"]
+[ext_resource type="Texture2D" uid="uid://d35plot0uopec" path="res://sprites/cool critters_Slices/Ant2.png" id="3_oixag"]
+[ext_resource type="Texture2D" uid="uid://bpnxlxucog87l" path="res://sprites/cool critters_Slices/Ant3.png" id="4_1q3rg"]
+[ext_resource type="Texture2D" uid="uid://d2luexo75pdv6" path="res://sprites/cool critters_Slices/Ant4.png" id="5_gl7m8"]
+[ext_resource type="Texture2D" uid="uid://ya3arnqoqcgq" path="res://sprites/cool critters_Slices/Beetle1.png" id="6_glueu"]
+[ext_resource type="Texture2D" uid="uid://nghenlid4sp6" path="res://sprites/cool critters_Slices/Beetle2.png" id="7_bsq0v"]
+[ext_resource type="Texture2D" uid="uid://beae5a0vnkgvi" path="res://sprites/cool critters_Slices/Beetle3.png" id="8_5mc6b"]
+[ext_resource type="Texture2D" uid="uid://dm58m5h0c5wti" path="res://sprites/cool critters_Slices/Beetle4.png" id="9_vio80"]
+[ext_resource type="Texture2D" uid="uid://csmucgq3jf6gc" path="res://sprites/cool critters_Slices/Ladybug1.png" id="10_d76su"]
+[ext_resource type="Texture2D" uid="uid://ckdry06qqma2y" path="res://sprites/cool critters_Slices/Ladybug2.png" id="11_bst0y"]
+[ext_resource type="Texture2D" uid="uid://dytbfm71gburo" path="res://sprites/cool critters_Slices/Ladybug3.png" id="12_q1cgd"]
+[ext_resource type="Texture2D" uid="uid://dmje18koc3tut" path="res://sprites/cool critters_Slices/Ladybug4.png" id="13_aacef"]
+[ext_resource type="Texture2D" uid="uid://dymxg1pddxw3l" path="res://sprites/cool critters_Slices/Millipede1.png" id="14_jdlkv"]
+[ext_resource type="Texture2D" uid="uid://d13dxneibrtvw" path="res://sprites/cool critters_Slices/Millipede2.png" id="15_e0138"]
+[ext_resource type="Texture2D" uid="uid://btn4ntrg8qi8g" path="res://sprites/cool critters_Slices/Millipede3.png" id="16_nbhyi"]
+[ext_resource type="Texture2D" uid="uid://caa5sk2b5n3sw" path="res://sprites/cool critters_Slices/Millipede4.png" id="17_nd5um"]
+[ext_resource type="Texture2D" uid="uid://v3kft0drulif" path="res://sprites/cool critters_Slices/Spider1.png" id="18_cjd73"]
+[ext_resource type="Texture2D" uid="uid://cb6f3xe3mcdg0" path="res://sprites/cool critters_Slices/Spider2.png" id="19_eua0m"]
+[ext_resource type="Texture2D" uid="uid://cvdwjv21ytlbb" path="res://sprites/cool critters_Slices/Spider3.png" id="20_xosef"]
+[ext_resource type="Texture2D" uid="uid://b6adsdq7r37r3" path="res://sprites/cool critters_Slices/Spider4.png" id="21_jaoj6"]
+[ext_resource type="Texture2D" uid="uid://bouec8me77d5k" path="res://sprites/cool critters_Slices/Thing1.png" id="22_4vwu3"]
+[ext_resource type="Texture2D" uid="uid://cq7vwt4llc1x8" path="res://sprites/cool critters_Slices/Thing2.png" id="23_lnmqb"]
+[ext_resource type="Texture2D" uid="uid://bp6fhopjeskwp" path="res://sprites/cool critters_Slices/Thing3.png" id="24_fsf3l"]
+[ext_resource type="Texture2D" uid="uid://dm5pds6bujc0f" path="res://sprites/cool critters_Slices/Thing4.png" id="25_v7tdi"]
+[ext_resource type="Texture2D" uid="uid://dvanxkhoer0pr" path="res://sprites/cool critters_Slices/Worm1.png" id="26_k0xhq"]
+[ext_resource type="Texture2D" uid="uid://c0ece3ib5uicx" path="res://sprites/cool critters_Slices/Worm2.png" id="27_l4ps7"]
+[ext_resource type="Texture2D" uid="uid://cgbw1h02ijo07" path="res://sprites/cool critters_Slices/Worm3.png" id="28_m5tsr"]
+[ext_resource type="Texture2D" uid="uid://cwqbeuk8jje6f" path="res://sprites/cool critters_Slices/Worm4.png" id="29_qayts"]
+[ext_resource type="Script" path="res://scripts/SquashStretchHandler.gd" id="30_naghs"]
+
+[node name="Critter" type="Node2D"]
+z_index = -1
+position = Vector2(154, 143)
+script = ExtResource("1_cctx2")
+textures = Array[Texture2D]([ExtResource("2_ond1y"), ExtResource("3_oixag"), ExtResource("4_1q3rg"), ExtResource("5_gl7m8"), ExtResource("6_glueu"), ExtResource("7_bsq0v"), ExtResource("8_5mc6b"), ExtResource("9_vio80"), ExtResource("10_d76su"), ExtResource("11_bst0y"), ExtResource("12_q1cgd"), ExtResource("13_aacef"), ExtResource("14_jdlkv"), ExtResource("15_e0138"), ExtResource("16_nbhyi"), ExtResource("17_nd5um"), ExtResource("18_cjd73"), ExtResource("19_eua0m"), ExtResource("20_xosef"), ExtResource("21_jaoj6"), ExtResource("22_4vwu3"), ExtResource("23_lnmqb"), ExtResource("24_fsf3l"), ExtResource("25_v7tdi"), ExtResource("26_k0xhq"), ExtResource("27_l4ps7"), ExtResource("28_m5tsr"), ExtResource("29_qayts")])
+
+[node name="CritterSprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_ond1y")
+script = ExtResource("30_naghs")
