@@ -1,11 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://b55kcv7uhnbqh"]
+[gd_scene load_steps=5 format=3 uid="uid://b55kcv7uhnbqh"]
 
+[ext_resource type="Script" path="res://scripts/Rock.gd" id="1_74gl1"]
 [ext_resource type="Texture2D" uid="uid://do110c20y1d8e" path="res://sprites/cool critters_Slices/Rock5.png" id="1_klhtb"]
+[ext_resource type="Texture2D" uid="uid://b2l53w5ojkmql" path="res://sprites/cool critters_Slices/Grass.png" id="1_lki38"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3yklb"]
+radius = 44.7214
 
 [node name="game" type="Node2D"]
 
-[node name="Node2D" type="Node2D" parent="."]
-position = Vector2(140, 131)
+[node name="Grass" type="Sprite2D" parent="."]
+position = Vector2(150, 150)
+texture = ExtResource("1_lki38")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+[node name="Rock" type="Area2D" parent="."]
+position = Vector2(157, 148)
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_74gl1")
+
+[node name="Sprite2D" type="Sprite2D" parent="Rock"]
 texture = ExtResource("1_klhtb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rock"]
+shape = SubResource("CircleShape2D_3yklb")
