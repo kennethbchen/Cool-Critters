@@ -1,13 +1,29 @@
-[gd_scene load_steps=7 format=3 uid="uid://b55kcv7uhnbqh"]
+[gd_scene load_steps=23 format=3 uid="uid://b55kcv7uhnbqh"]
 
 [ext_resource type="Script" path="res://scripts/Rock.gd" id="1_74gl1"]
 [ext_resource type="Script" path="res://Game.gd" id="1_e1h1s"]
 [ext_resource type="Texture2D" uid="uid://do110c20y1d8e" path="res://sprites/cool critters_Slices/Rock5.png" id="1_klhtb"]
 [ext_resource type="Texture2D" uid="uid://b2l53w5ojkmql" path="res://sprites/cool critters_Slices/Grass.png" id="1_lki38"]
 [ext_resource type="PackedScene" uid="uid://jervbtlwclkc" path="res://scenes/critter.tscn" id="2_rwof5"]
+[ext_resource type="Script" path="res://scripts/SpriteAssigner.gd" id="5_8ecb3"]
+[ext_resource type="Texture2D" uid="uid://dxuqcvrk5r2s8" path="res://sprites/cool critters_Slices/Rock11.png" id="5_ts1l1"]
+[ext_resource type="Texture2D" uid="uid://3t67moqn23cp" path="res://sprites/cool critters_Slices/Rock1.png" id="6_e323k"]
+[ext_resource type="Texture2D" uid="uid://cojgib6kbr57u" path="res://sprites/cool critters_Slices/Rock2.png" id="7_06gsw"]
+[ext_resource type="Texture2D" uid="uid://cw2jn7sb4bimc" path="res://sprites/cool critters_Slices/Rock3.png" id="8_rtujf"]
+[ext_resource type="Texture2D" uid="uid://bd8y8yrh784f" path="res://sprites/cool critters_Slices/Rock4.png" id="9_u7ymg"]
+[ext_resource type="Texture2D" uid="uid://cjwdmfpyv8f8h" path="res://sprites/cool critters_Slices/Rock6.png" id="11_oibjr"]
+[ext_resource type="Texture2D" uid="uid://b73ahyetavlxu" path="res://sprites/cool critters_Slices/Rock7.png" id="12_0g386"]
+[ext_resource type="Texture2D" uid="uid://bp5qiidr6bsnt" path="res://sprites/cool critters_Slices/Rock8.png" id="13_pmbv5"]
+[ext_resource type="Texture2D" uid="uid://brsp0j3gqag1w" path="res://sprites/cool critters_Slices/Rock9.png" id="14_vlbpl"]
+[ext_resource type="Texture2D" uid="uid://c8ijingms51ky" path="res://sprites/cool critters_Slices/Rock10.png" id="15_1gsr7"]
+[ext_resource type="Texture2D" uid="uid://wdihivmt7vd5" path="res://sprites/cool critters_Slices/Rock12.png" id="17_uxhky"]
+[ext_resource type="Texture2D" uid="uid://b18old8mc54ci" path="res://sprites/cool critters_Slices/Rock13.png" id="18_6jr5g"]
+[ext_resource type="Texture2D" uid="uid://c7b4kxl2d52fs" path="res://sprites/cool critters_Slices/Rock14.png" id="19_5g4ok"]
+[ext_resource type="Texture2D" uid="uid://ctpbv3dmbgevo" path="res://sprites/cool critters_Slices/Rock15.png" id="20_rltgj"]
+[ext_resource type="Texture2D" uid="uid://f7papryr8m38" path="res://sprites/cool critters_Slices/Rock16.png" id="21_0g3jp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3yklb"]
-radius = 44.7214
+radius = 78.6921
 
 [node name="game" type="Node2D"]
 script = ExtResource("1_e1h1s")
@@ -20,14 +36,20 @@ texture = ExtResource("1_lki38")
 [node name="Critters" type="Node" parent="."]
 
 [node name="Critter" parent="Critters" instance=ExtResource("2_rwof5")]
+position = Vector2(39, 42)
 
 [node name="Rock" type="Area2D" parent="."]
-position = Vector2(157, 148)
+position = Vector2(154, 143)
 scale = Vector2(1.5, 1.5)
 script = ExtResource("1_74gl1")
 
-[node name="Sprite2D" type="Sprite2D" parent="Rock"]
-texture = ExtResource("1_klhtb")
+[node name="SpriteAssigner" type="Node2D" parent="Rock" node_paths=PackedStringArray("sprite")]
+script = ExtResource("5_8ecb3")
+sprite = NodePath("Sprite2D")
+textures = Array[Texture2D]([ExtResource("6_e323k"), ExtResource("7_06gsw"), ExtResource("8_rtujf"), ExtResource("9_u7ymg"), ExtResource("1_klhtb"), ExtResource("11_oibjr"), ExtResource("12_0g386"), ExtResource("13_pmbv5"), ExtResource("14_vlbpl"), ExtResource("15_1gsr7"), ExtResource("5_ts1l1"), ExtResource("17_uxhky"), ExtResource("18_6jr5g"), ExtResource("19_5g4ok"), ExtResource("20_rltgj"), ExtResource("21_0g3jp")])
+
+[node name="Sprite2D" type="Sprite2D" parent="Rock/SpriteAssigner"]
+texture = ExtResource("5_ts1l1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Rock"]
 shape = SubResource("CircleShape2D_3yklb")

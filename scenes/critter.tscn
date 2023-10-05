@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://jervbtlwclkc"]
+[gd_scene load_steps=32 format=3 uid="uid://jervbtlwclkc"]
 
 [ext_resource type="Script" path="res://scripts/Critter.gd" id="1_cctx2"]
 [ext_resource type="Texture2D" uid="uid://cmkej8usyfvy2" path="res://sprites/cool critters_Slices/Ant1.png" id="2_ond1y"]
@@ -30,13 +30,17 @@
 [ext_resource type="Texture2D" uid="uid://cgbw1h02ijo07" path="res://sprites/cool critters_Slices/Worm3.png" id="28_m5tsr"]
 [ext_resource type="Texture2D" uid="uid://cwqbeuk8jje6f" path="res://sprites/cool critters_Slices/Worm4.png" id="29_qayts"]
 [ext_resource type="Script" path="res://scripts/SquashStretchHandler.gd" id="30_naghs"]
+[ext_resource type="Script" path="res://scripts/SpriteAssigner.gd" id="30_nsne3"]
 
 [node name="Critter" type="Node2D"]
 z_index = -1
-position = Vector2(154, 143)
 script = ExtResource("1_cctx2")
+
+[node name="SpriteAssigner" type="Node2D" parent="." node_paths=PackedStringArray("sprite")]
+script = ExtResource("30_nsne3")
+sprite = NodePath("CritterSprite")
 textures = Array[Texture2D]([ExtResource("2_ond1y"), ExtResource("3_oixag"), ExtResource("4_1q3rg"), ExtResource("5_gl7m8"), ExtResource("6_glueu"), ExtResource("7_bsq0v"), ExtResource("8_5mc6b"), ExtResource("9_vio80"), ExtResource("10_d76su"), ExtResource("11_bst0y"), ExtResource("12_q1cgd"), ExtResource("13_aacef"), ExtResource("14_jdlkv"), ExtResource("15_e0138"), ExtResource("16_nbhyi"), ExtResource("17_nd5um"), ExtResource("18_cjd73"), ExtResource("19_eua0m"), ExtResource("20_xosef"), ExtResource("21_jaoj6"), ExtResource("22_4vwu3"), ExtResource("23_lnmqb"), ExtResource("24_fsf3l"), ExtResource("25_v7tdi"), ExtResource("26_k0xhq"), ExtResource("27_l4ps7"), ExtResource("28_m5tsr"), ExtResource("29_qayts")])
 
-[node name="CritterSprite" type="Sprite2D" parent="."]
+[node name="CritterSprite" type="Sprite2D" parent="SpriteAssigner"]
 texture = ExtResource("2_ond1y")
 script = ExtResource("30_naghs")
