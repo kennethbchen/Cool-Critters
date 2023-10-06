@@ -1,11 +1,19 @@
-[gd_scene load_steps=8 format=3 uid="uid://b55kcv7uhnbqh"]
+[gd_scene load_steps=12 format=3 uid="uid://b55kcv7uhnbqh"]
 
 [ext_resource type="Script" path="res://Game.gd" id="1_e1h1s"]
 [ext_resource type="Texture2D" uid="uid://b2l53w5ojkmql" path="res://sprites/cool critters_Slices/Grass.png" id="1_lki38"]
 [ext_resource type="PackedScene" uid="uid://jervbtlwclkc" path="res://scenes/critter.tscn" id="2_rwof5"]
+[ext_resource type="Script" path="res://addons/soundeffectcontroller/sound_effect_controller/sound_effect_controller.gd" id="4_fhupm"]
 [ext_resource type="PackedScene" uid="uid://cm5vmpfdvfpx7" path="res://scenes/rock.tscn" id="4_lff41"]
 [ext_resource type="Script" path="res://addons/simplemenu/simple_menu/simple_menu.gd" id="5_hj1lp"]
+[ext_resource type="AudioStream" uid="uid://db3ikkbic5j56" path="res://audio/sfx/32260__sagetyrtle__smallcrowd.wav" id="5_iqfn0"]
+[ext_resource type="Script" path="res://addons/soundeffectcontroller/sound_effect.gd" id="5_wwsc6"]
 [ext_resource type="Script" path="res://addons/simplemenu/simple_menu_button_binding.gd" id="6_ukh51"]
+
+[sub_resource type="Resource" id="Resource_pmyka"]
+script = ExtResource("5_wwsc6")
+name = "applause"
+audio_clips = Array[AudioStream]([ExtResource("5_iqfn0")])
 
 [sub_resource type="Resource" id="Resource_lpcou"]
 script = ExtResource("6_ukh51")
@@ -17,6 +25,11 @@ script = ExtResource("1_e1h1s")
 rock_scene = ExtResource("4_lff41")
 rock_origin = NodePath("RockOrigin")
 critter_scene = ExtResource("2_rwof5")
+
+[node name="SoundEffectController" type="Node" parent="."]
+script = ExtResource("4_fhupm")
+audio_bus = "SFX"
+sound_effects = Array[ExtResource("5_wwsc6")]([SubResource("Resource_pmyka")])
 
 [node name="Grass" type="Sprite2D" parent="."]
 z_index = -5

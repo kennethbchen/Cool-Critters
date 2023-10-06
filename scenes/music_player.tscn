@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1jhtod1lrcta"]
+
+[ext_resource type="AudioStream" uid="uid://wjk65vm2ietc" path="res://audio/apple_cider.wav" id="1_5fmpu"]
+
+[node name="MusicPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_5fmpu")
+autoplay = true
+bus = &"Music"

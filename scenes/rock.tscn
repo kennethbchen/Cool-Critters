@@ -24,7 +24,6 @@ radius = 78.6921
 
 [node name="Rock" type="Area2D"]
 position = Vector2(154, 143)
-scale = Vector2(1.5, 1.5)
 script = ExtResource("1_fhttv")
 
 [node name="SpriteAssigner" type="Node2D" parent="." node_paths=PackedStringArray("sprite")]
@@ -33,6 +32,7 @@ sprite = NodePath("Sprite2D")
 textures = Array[Texture2D]([ExtResource("3_jgam3"), ExtResource("4_ljr4c"), ExtResource("5_33s7n"), ExtResource("6_pwvoi"), ExtResource("7_3ug2v"), ExtResource("8_4nogi"), ExtResource("9_o5g5q"), ExtResource("10_vnno5"), ExtResource("11_wwrqc"), ExtResource("12_2ji3r"), ExtResource("13_nd03k"), ExtResource("14_y1lgh"), ExtResource("15_rg4td"), ExtResource("16_ohqih"), ExtResource("17_me0ym"), ExtResource("18_atb4p")])
 
 [node name="Sprite2D" type="Sprite2D" parent="SpriteAssigner"]
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("13_nd03k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
