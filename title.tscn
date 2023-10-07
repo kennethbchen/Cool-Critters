@@ -25,7 +25,7 @@ action_type = 0
 target_nodes = Array[NodePath]([NodePath("../CanvasLayer/Credits")])
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xghb4"]
-bg_color = Color(0.0509804, 0.0509804, 0.0509804, 0.941176)
+bg_color = Color(0.0509804, 0.0509804, 0.0509804, 0.862745)
 
 [node name="Title" type="Node2D"]
 
@@ -145,6 +145,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 10.0
+offset_right = -10.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -168,3 +170,13 @@ autowrap_mode = 3
 layout_mode = 2
 size_flags_stretch_ratio = 3.52
 text = "Close"
+
+[node name="Spacer" type="Label" parent="CanvasLayer/Credits/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.02
+theme_override_font_sizes/font_size = 12
+text = "
+"
+horizontal_alignment = 1
+autowrap_mode = 3
