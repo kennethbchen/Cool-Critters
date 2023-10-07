@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dh5vrcjnh4vk3"]
+[gd_scene load_steps=10 format=3 uid="uid://dh5vrcjnh4vk3"]
 
 [ext_resource type="Script" path="res://addons/simplemenu/simple_menu/simple_menu.gd" id="1_1qc5c"]
 [ext_resource type="Texture2D" uid="uid://ct74ppg5jli38" path="res://sprites/cool critters_Slices/TitleLogo.png" id="1_240qt"]
@@ -8,15 +8,30 @@
 
 [sub_resource type="Resource" id="Resource_la555"]
 script = ExtResource("2_fic66")
-button_path = NodePath("../CanvasLayer/Control/PlayButton")
+button_path = NodePath("../CanvasLayer/Control/VBoxContainer/PlayButton")
 action_type = 3
 scene_to_load = "res://game.tscn"
+
+[sub_resource type="Resource" id="Resource_ujdtu"]
+script = ExtResource("2_fic66")
+button_path = NodePath("../CanvasLayer/Control/VBoxContainer/CreditsButton")
+action_type = 1
+target_nodes = Array[NodePath]([NodePath("../CanvasLayer/Credits")])
+
+[sub_resource type="Resource" id="Resource_37y8f"]
+script = ExtResource("2_fic66")
+button_path = NodePath("../CanvasLayer/Credits/VBoxContainer/CloseCreditsButton")
+action_type = 0
+target_nodes = Array[NodePath]([NodePath("../CanvasLayer/Credits")])
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xghb4"]
+bg_color = Color(0.0509804, 0.0509804, 0.0509804, 0.941176)
 
 [node name="Title" type="Node2D"]
 
 [node name="SimpleMenu" type="Node" parent="."]
 script = ExtResource("1_1qc5c")
-actions = Array[ExtResource("2_fic66")]([SubResource("Resource_la555")])
+actions = Array[ExtResource("2_fic66")]([SubResource("Resource_la555"), SubResource("Resource_ujdtu"), SubResource("Resource_37y8f")])
 
 [node name="Grass" type="Sprite2D" parent="."]
 texture_repeat = 2
@@ -39,22 +54,33 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -74.0
-offset_top = -31.0
+offset_top = 6.0
 offset_right = 74.0
 offset_bottom = 79.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PlayButton" type="Button" parent="CanvasLayer/Control"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayButton" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
 layout_mode = 2
-offset_top = 65.0
-offset_right = 148.0
-offset_bottom = 96.0
 size_flags_horizontal = 3
 size_flags_vertical = 4
 text = "Observe Critters"
 
-[node name="Control2" type="Control" parent="CanvasLayer"]
+[node name="CreditsButton" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "Credits"
+
+[node name="Instructions" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 7
 anchor_left = 0.5
@@ -68,7 +94,7 @@ offset_bottom = -25.5
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Control2"]
+[node name="Panel" type="Panel" parent="CanvasLayer/Instructions"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -80,7 +106,7 @@ offset_bottom = 24.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/Control2"]
+[node name="Label" type="Label" parent="CanvasLayer/Instructions"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -89,3 +115,56 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Controls: Move Mouse
 Left Click + Drag Rocks "
+
+[node name="Credits" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -145.0
+offset_top = -142.0
+offset_right = 145.0
+offset_bottom = 142.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Credits"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xghb4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Credits"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Credits/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 12
+text = "~ Credits ~
+
+Song \"Apple Cider\" by Zane Little Music
+https://opengameart.org/content/apple-cider
+
+Cheering sound by sagetyrtle
+https://freesound.org/people/sagetyrtle/sounds/32260/
+
+everything else made my me :)"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="CloseCreditsButton" type="Button" parent="CanvasLayer/Credits/VBoxContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 3.52
+text = "Close"
